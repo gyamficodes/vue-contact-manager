@@ -1,8 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 *{
   padding: 0px;
   margin: 0px;
-  font-family: 'Roboto', sans-serif;
-  background: #f0fdf0;
+  font-family: 'Ubuntu', sans-serif;
+}
+body{
+  background-color: #f0fdf0;
+
+}
+
+.nav-edit{
+  display: flex;
+  align-items: center;
+
+}
+.box{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#page{
+  display: flex !important;
+  align-items: center !important;
+  gap: 1em;
 }
 
