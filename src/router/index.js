@@ -10,13 +10,38 @@ const routes = [
     name: 'home',
     component: HomeView,
   },
+  // {
+  //   path: '/about',
+  //   name: 'about',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+  // },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    path: '/contacts',
+    name: 'contacts',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ContactManager.vue'),
+  },
+  {
+    path: '/edit',
+    name: 'EditContact',
+    component: () => import(/* webpackChunkName: "about" */ '../views/EditContact.vue'),
+  },
+  {
+    path: '/view',
+    name: 'ViewContact',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ViewContact.vue'),
+  },
+  {
+    path: '/add',
+    name: 'AddContact',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AddContact.vue'),
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'PageNotFound',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PageNotFound.vue'),
   },
 ];
 
