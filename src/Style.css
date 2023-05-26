@@ -23,5 +23,23 @@ body{
   display: flex !important;
   align-items: center !important;
   gap: 1em;
+  
 }
+
+.Contact-image{
+  width: 150px !important;
+  /* height: 70px !important; */
+  border-radius: 50%;
+}
+
+.cd{
+  background: #cfe2ffa8 !important;
+}
+
+
+
+
+
+
+
 
