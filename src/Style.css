@@ -1,45 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
   padding: 0px;
   margin: 0px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
-body{
+body {
   background-color: #f0fdf0;
-
 }
 
-.nav-edit{
+.nav-edit {
   display: flex;
   align-items: center;
-
 }
-.box{
+.box {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
-#page{
+#page {
   display: flex !important;
   align-items: center !important;
   gap: 1em;
-  
 }
 
-.Contact-image{
+.Contact-image {
   width: 150px !important;
   /* height: 70px !important; */
   border-radius: 50%;
 }
 
-.cd{
+.cd {
   background: #cfe2ffa8 !important;
 }
-
-
-
-
-
-
-
-
+.box-f{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
+}
