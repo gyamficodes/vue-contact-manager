@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import image from '../assets/Loading.gif';
+import image from '../assets/Load.gif';
 
 export default {
   name: 'SpinNer',

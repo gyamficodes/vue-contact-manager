@@ -34,32 +34,51 @@
         </div>
       </div>
     </div>
-    <div class="container mt-3">
-      <div class="row ">
-        <div class="col-md-6">
+    <div v-if="Loading">
+    <div class="row">
+    <div class="col">
+    <SpinNer/>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row"></div>
+    </div>
+    <div class="container mt-3" v-if="contacts.length > 0">
+      <div class="row">
+        <div class="col-md-6" v-for="contact in contacts" :key="contact">
           <div class="card my-2 cd shadow-lg">
             <div class="card-body">
               <div class="row align-items-center">
                 <!-- image -->
                 <div class="col-sm-4">
-                  <img class="Contact-image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CRKPij6o2waFROp-89BCE8lEf96jLsndRQ&usqp=CAU"
-                    alt="">
+                  <img class="Contact-image" :src="contact.photo" alt="" />
                 </div>
                 <!-- items -->
                 <div class="col-sm-7">
-                <ul class="list-group">
-                <li class="list-group-item">Name: <span class="fw-bold ">Name</span></li>
-                <li class="list-group-item"> Email: <span class="fw-bold ">Email</span></li>
-                <li class="list-group-item">Contact: <span class="fw-bold ">Contact</span></li>
-
-                </ul>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      Name: <span class="fw-bold">{{ contact.name }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      Email: <span class="fw-bold">{{ contact.email }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      Contact: <span class="fw-bold">{{ contact.mobile }}</span>
+                    </li>
+                  </ul>
                 </div>
                 <!-- route -->
                 <div class="col-sm-1 box-f">
-                  <router-link to="/view" class="btn btn-warning my-1"><i class="fa-solid fa-eye"></i></router-link>
-                  <router-link to="/edit" class="btn btn-primary my-1"><i class="fa-solid fa-pen"></i></router-link>
-                  <button type="button" class="btn btn-danger my-1"><i class="fa-solid fa-trash"></i></button>
+                  <router-link to="/view" class="btn btn-warning my-1"
+                    ><i class="fa-solid fa-eye"></i
+                  ></router-link>
+                  <router-link to="/edit" class="btn btn-primary my-1"
+                    ><i class="fa-solid fa-pen"></i
+                  ></router-link>
+                  <button type="button" class="btn btn-danger my-1">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -70,12 +89,36 @@
   </div>
 </template>
 <script>
+import { ContactServices } from '@/Services/ContactServices';
+import SpinNer from '@/components/SpinNer.vue';
+
 export default {
   name: 'ContactManager',
-  components: {},
+  components: { SpinNer },
   props: [],
   data() {
-    return {};
+    return {
+      Loading: false,
+      contacts: [],
+      errorMessage: null,
+    };
+  },
+  async created() {
+    try {
+      this.Loading = true;
+      const response = await ContactServices.getALLContacts();
+      this.contacts = response.data;
+      this.Loading = false;
+    } catch (error) {
+      this.errorMessage = error;
+      this.Loading = false;
+    }
+  },
+  methods: {
+    async getALLContactsData() {
+      // eslint-disable-next-line no-return-await
+      // return await ContactServices.getALLContacts();
+    },
   },
 };
 </script>
