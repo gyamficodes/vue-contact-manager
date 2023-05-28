@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  <!-- <SpinNer/> -->
   <NavBar/>
     <!-- <nav>
       <router-link to="/">Home</router-link> |
@@ -13,11 +14,13 @@
 </template>
 <script>
 import NavBar from './components/NavBar.vue';
+// import SpinNer from './components/SpinNer.vue';
 
 export default {
   name: 'App',
   components: {
     NavBar,
+    // SpinNer,
   },
 };
 </script>

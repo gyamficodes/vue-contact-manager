@@ -69,5 +69,14 @@
     </div>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+  name: 'ContactManager',
+  components: {},
+  props: [],
+  data() {
+    return {};
+  },
+};
+</script>
 <style lang="css"></style>
