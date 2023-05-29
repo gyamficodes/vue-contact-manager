@@ -34,12 +34,23 @@
         </div>
       </div>
     </div>
+    <!-- losding -->
     <div v-if="Loading">
-    <div class="row">
-    <div class="col">
-    <SpinNer/>
+      <div class="row">
+        <div class="col">
+          <SpinNer />
+        </div>
+      </div>
     </div>
-    </div>
+    <!-- error message -->
+    <div v-if="Loading && errorMessage">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+          <p class="h3 fw-bold text-danger">{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container">
       <div class="row"></div>
