@@ -15,9 +15,9 @@
             </router-link>
           </div>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, modi? Similique,
-            provident? Vel sunt quo doloribus dolore assumenda ad excepturi. Quo magnam nostrum
-            nobis sequi eaque, quam tempora inventore expedita?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, modi?
+            Similique, provident? Vel sunt quo doloribus dolore assumenda ad excepturi.
+            Quo magnam nostrum nobis sequi eaque, quam tempora inventore expedita?
           </p>
           <div class="row">
             <div class="col-md-6">
@@ -26,7 +26,11 @@
                   <input type="text" class="form-control" placeholder="Search Name" />
                 </div>
                 <div class="col">
-                  <input type="submit" class="btn btn-outline-dark inp" placeholder="submit" />
+                  <input
+                    type="submit"
+                    class="btn btn-outline-dark inp"
+                    placeholder="submit"
+                  />
                 </div>
               </div>
             </div>
@@ -47,7 +51,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-          <p class="h3 fw-bold text-danger">{{ errorMessage }}</p>
+            <p class="h3 fw-bold text-danger">{{ errorMessage }}</p>
           </div>
         </div>
       </div>
