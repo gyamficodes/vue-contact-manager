@@ -19,22 +19,22 @@
         <div class="col-md-4">
           <form>
             <div class="mt-3">
-              <input type="text" class="form-control" placeholder="name" />
+              <input v-model="contacts.name" type="text" class="form-control" placeholder="name" />
             </div>
             <div class="mt-3">
-              <input type="text" class="form-control" placeholder="Photo Url" />
+              <input v-model="contacts.phtoto" type="text" class="form-control" placeholder="Photo Url" />
             </div>
             <div class="mt-3">
-              <input type="email" class="form-control" placeholder="Email" />
+              <input v-model="contacts.email" type="email" class="form-control" placeholder="Email" />
             </div>
             <div class="mt-3">
-              <input type="number" class="form-control" placeholder="Mobile" />
+              <input v-model="contacts.mobile" type="number" class="form-control" placeholder="Mobile" />
             </div>
             <div class="mt-3">
-              <input type="text" class="form-control" placeholder="Company" />
+              <input v-model="contacts.company" type="text" class="form-control" placeholder="Company" />
             </div>
             <div class="mt-3">
-              <input type="text" class="form-control" placeholder="Title" />
+              <input v-model="contacts.title" type="text" class="form-control" placeholder="Title" />
             </div>
             <div class="mt-3">
               <select class="form-control" id="">
@@ -55,8 +55,32 @@
 </template>
 
 <script>
+import { ContactServices } from '@/Services/ContactServices';
+
 export default {
   name: 'AddContact',
+  data() {
+    return {
+      contacts: {
+        name: '',
+        phtoto: '',
+        email: '',
+        mobile: '',
+        company: '',
+        title: '',
+        groupId: '',
+      },
+      groups: [],
+    };
+  },
+  async created() {
+    try {
+      const response = await ContactServices.getALLgroups();
+      this.groups = response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 </script>
 <style lang="css"></style>
