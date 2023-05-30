@@ -61,7 +61,7 @@
     </div>
     <div class="container mt-3" v-if="contacts.length > 0">
       <div class="row">
-        <div class="col-md-6" v-for="contact in contacts" :key="contact">
+        <div class="col-md-6" v-for="contact in contacts" :key="contact.contactId">
           <div class="card my-2 cd shadow-lg">
             <div class="card-body">
               <div class="row align-items-center">
@@ -91,7 +91,7 @@
                   <router-link to="/edit" class="btn btn-primary my-1"
                     ><i class="fa-solid fa-pen"></i
                   ></router-link>
-                  <button type="button" class="btn btn-danger my-1">
+                  <button type="button" class="btn btn-danger my-1" @click="clickDeleteContact(contact.id)">
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </div>
@@ -130,9 +130,20 @@ export default {
     }
   },
   methods: {
-    async getALLContactsData() {
-      // eslint-disable-next-line no-return-await
-      // return await ContactServices.getALLContacts();
+    async clickDeleteContact(contactId) {
+      try {
+        this.Loading = true;
+        const response = await ContactServices.deleteContact(contactId);
+        if (response) {
+          // eslint-disable-next-line no-shadow
+          const response = await ContactServices.getALLContacts();
+          this.contacts = response.data;
+          this.Loading = false;
+        }
+      } catch (error) {
+        this.errorMessage = error;
+        this.Loading = false;
+      }
     },
   },
 };

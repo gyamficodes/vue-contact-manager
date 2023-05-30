@@ -1,70 +1,60 @@
 {
-    "contacts": [
-      {
-        "id": "D6BNdWnHI",
-        "name": "Brad Gibson",
-        "company": "YouTube",
-        "email": "brad@gmail.com",
-        "title": "Youtuber",
-        "mobile": "9876546787",
-        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0g8R5VmgqDqpRCwQfw2Y9V-DM-iXS59R9hQ&usqp=CAU",
-        "groupId": "3"
-      },
-      {
-        "id": "TVobxeKbI",
-        "name": "Glenda Kim",
-        "company": "Friend",
-        "email": "glenda@gmail.com",
-        "title": "freelancer",
-        "mobile": "8880009991",
-        "photo": "https://www.kindpng.com/picc/m/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png",
-        "groupId": "2"
-      },
-      {
-        "id": "UyEDV5Yds",
-        "name": "Vladeen Min",
-        "company": "Service",
-        "email": "vladeen@gmail.com",
-        "title": "Electrician",
-        "mobile": "9876546787",
-        "photo": "https://png.pngtree.com/png-clipart/20190922/original/pngtree-business-male-user-avatar-vector-png-image_4774078.jpg",
-        "groupId": "4"
-      },
-      {
-        "name": "Rajan",
-        "photo": "https://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/User-icon.png",
-        "mobile": "9090909090",
-        "email": "rajan@gmail.com",
-        "company": "HCL Technologies",
-        "title": "Software Engineer",
-        "groupId": "1",
-        "id": "kLt-bJF"
-      }
-    ],
-    "groups": [
-      {
-        "id": "1",
-        "name": "Colleague"
-      },
-      {
-        "id": "2",
-        "name": "Friend"
-      },
-      {
-        "id": "3",
-        "name": "Family"
-      },
-      {
-        "id": "4",
-        "name": "Service"
-      },
-      {
-        "id": "5",
-        "name": "Community"
-      },
-      {
-        "id": "6",
-        "name": "Social"
-      }
-    ]
-  }
+  "contacts": [
+    {
+      "id": "D6BNdWnHI",
+      "name": "Brad Gibson",
+      "company": "YouTube",
+      "email": "brad@gmail.com",
+      "title": "Youtuber",
+      "mobile": "9876546787",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0g8R5VmgqDqpRCwQfw2Y9V-DM-iXS59R9hQ&usqp=CAU",
+      "groupId": "3"
+    },
+    {
+      "id": "TVobxeKbI",
+      "name": "Glenda Kim",
+      "company": "Friend",
+      "email": "glenda@gmail.com",
+      "title": "freelancer",
+      "mobile": "8880009991",
+      "photo": "https://www.kindpng.com/picc/m/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png",
+      "groupId": "2"
+    },
+    {
+      "name": "Gyamfi John",
+      "phtoto": "data:image/jpeg;base64,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",
+      "email": "testing@gmail.com",
+      "mobile": "2342124",
+      "company": "tech",
+      "title": "devs",
+      "groupId": "1",
+      "id": "xinIKXL"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Colleague"
+    },
+    {
+      "id": "2",
+      "name": "Friend"
+    },
+    {
+      "id": "3",
+      "name": "Family"
+    },
+    {
+      "id": "4",
+      "name": "Service"
+    },
+    {
+      "id": "5",
+      "name": "Community"
+    },
+    {
+      "id": "6",
+      "name": "Social"
+    }
+  ]
+}

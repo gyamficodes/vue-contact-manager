@@ -14,11 +14,10 @@
         </div>
       </div>
     </div>
-    {{ contacts }}
     <div class="container mt-3">
       <div class="row">
         <div class="col-md-4">
-          <form>
+          <form @submit.prevent="submitCreate()">
             <div class="mt-3">
               <input v-model="contacts.name" type="text" class="form-control" placeholder="name" />
             </div>
@@ -49,7 +48,7 @@
           </form>
         </div>
         <div class="col-md-4">
-        <img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CRKPij6o2waFROp-89BCE8lEf96jLsndRQ&usqp=CAU" alt="">
+        <img class="contact-image2" :src="contacts.phtoto" alt="">
         </div>
       </div>
     </div>
@@ -78,11 +77,25 @@ export default {
   },
   async created() {
     try {
-      const response = await ContactServices.getALLgroups();
+      const response = await ContactServices.getALLgroups(this.contacts);
       this.groups = response.data;
     } catch (error) {
       console.log(error);
     }
+  },
+  methods: {
+    // eslint-disable-next-line consistent-return
+    async submitCreate() {
+      try {
+        const response = await ContactServices.createContact(this.contacts);
+        if (response) {
+          return this.$router.push('/contacts');
+        }
+        return this.$router.push('/add');
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>
