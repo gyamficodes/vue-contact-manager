@@ -14,6 +14,7 @@
         </div>
       </div>
     </div>
+    {{ contacts }}
     <div class="container mt-3">
       <div class="row">
         <div class="col-md-4">
@@ -36,9 +37,10 @@
             <div class="mt-3">
               <input v-model="contacts.title" type="text" class="form-control" placeholder="Title" />
             </div>
-            <div class="mt-3">
-              <select class="form-control" id="">
+            <div class="mt-3"  >
+              <select  v-model="contacts.groupId" class="form-control" v-if="groups.length > 0">
                 <option value="">Select Group</option>
+                <option :value="group.id" v-for="group in groups" :key="group.id">{{ group.name }}</option>
               </select>
             </div>
             <div class="mt-3">
@@ -59,6 +61,7 @@ import { ContactServices } from '@/Services/ContactServices';
 
 export default {
   name: 'AddContact',
+  props: [],
   data() {
     return {
       contacts: {
