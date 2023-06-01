@@ -122,7 +122,6 @@ export default {
     try {
       this.Loading = true;
       const response = await ContactServices.getALLContacts();
-
       this.contacts = response.data;
       this.Loading = false;
     } catch (error) {

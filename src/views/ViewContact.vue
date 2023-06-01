@@ -13,6 +13,7 @@
         </div>
       </div>
     </div>
+    <pre>{{ contact }}</pre>
     <div class="container mt-3">
       <div class="row align-items-center">
         <div class="col-md-4">
@@ -28,7 +29,7 @@
             <li class="list-group-item">Email: <span class="fw-bold">Email</span></li>
             <li class="list-group-item">Contact: <span class="fw-bold">Contact</span></li>
             <li class="list-group-item">Company: <span class="fw-bold">Company</span></li>
-            <li class="list-group-item">Title: <span class="fw-bold">Titil</span></li>
+            <li class="list-group-item">Title: <span class="fw-bold">Title</span></li>
             <li class="list-group-item">Group: <span class="fw-bold">Group</span></li>
           </ul>
         </div>
@@ -52,17 +53,23 @@ export default {
   data() {
     return {
       contactId: this.$route.params.id,
+      Loading: false,
+      contact: {},
+      errorMessage: null,
     };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {},
   async created() {
     try {
+      this.Loading = true;
       const response = ContactServices.getContact(this.contactId);
-      console.log(response);
+      this.contact = (await response).data;
+      // console.log(response);
+      this.Loading = false;
     } catch (error) {
-      console.log(error);
+      this.errorMessage = error;
+      this.Loading = false;
     }
   },
 };
