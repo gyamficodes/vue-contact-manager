@@ -24,7 +24,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ContactManager.vue'),
   },
   {
-    path: '/edit',
+    path: '/edit/:id',
     name: 'EditContact',
     component: () => import(/* webpackChunkName: "about" */ '../views/EditContact.vue'),
   },

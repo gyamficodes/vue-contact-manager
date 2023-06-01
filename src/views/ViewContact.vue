@@ -35,7 +35,7 @@
       <div class="row align-items-center">
         <div class="col-md-4">
           <img
-            class="contact-image"
+            class="contact-image" style="width: 200px;"
             :src="contact.photo"
             alt=""
           />
@@ -45,7 +45,7 @@
             <li class="list-group-item">Name: <span class="fw-bold">{{ contact.name }}</span></li>
             <li class="list-group-item">Email: <span class="fw-bold">{{ contact.email }}</span></li>
             <li class="list-group-item">Contact: <span class="fw-bold">{{ contact.mobile }}</span></li>
-            <li class="list-group-item">Company: <span class="fw-bold">{{  contact.Company}}</span></li>
+            <li class="list-group-item">Company: <span class="fw-bold">{{  contact.company}}</span></li>
             <li class="list-group-item">Title: <span class="fw-bold">{{ contact.title }}</span></li>
             <li class="list-group-item">Group: <span class="fw-bold">{{ group.name }}</span></li>
           </ul>

@@ -88,7 +88,7 @@
                   <router-link :to="`view/${contact.id}`" class="btn btn-warning my-1"
                     ><i class="fa-solid fa-eye"></i
                   ></router-link>
-                  <router-link to="/edit" class="btn btn-primary my-1"
+                  <router-link :to="`edit/${contact.id}`" class="btn btn-primary my-1"
                     ><i class="fa-solid fa-pen"></i
                   ></router-link>
                   <button type="button" class="btn btn-danger my-1" @click="clickDeleteContact(contact.id)">
