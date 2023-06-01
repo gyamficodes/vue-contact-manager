@@ -19,25 +19,25 @@
         <div class="col-md-4">
           <form @submit.prevent="UpdateSubmit()">
             <div class="mt-3">
-              <input type="text" v-model="contact.name" class="form-control" placeholder="name" />
+              <input required type="text" v-model="contact.name" class="form-control" placeholder="name" />
             </div>
             <div class="mt-3">
-              <input type="text" v-model="contact.photo" class="form-control" placeholder="Photo Url" />
+              <input required type="text" v-model="contact.photo" class="form-control" placeholder="Photo Url" />
             </div>
             <div class="mt-3">
-              <input type="email" v-model="contact.email"  class="form-control" placeholder="Email" />
+              <input required type="email" v-model="contact.email"  class="form-control" placeholder="Email" />
             </div>
             <div class="mt-3">
-              <input type="number" v-model="contact.mobile" class="form-control" placeholder="Mobile" />
+              <input required type="number" v-model="contact.mobile" class="form-control" placeholder="Mobile" />
             </div>
             <div class="mt-3">
-              <input type="text" v-model="contact.company" class="form-control" placeholder="Company" />
+              <input required type="text" v-model="contact.company" class="form-control" placeholder="Company" />
             </div>
             <div class="mt-3">
-              <input type="text" v-model="contact.title" class="form-control" placeholder="Title" />
+              <input required type="text" v-model="contact.title" class="form-control" placeholder="Title" />
             </div>
             <div class="mt-3">
-              <select  class="form-control" v-if="groups.length > 0">
+              <select required class="form-control" v-if="groups.length > 0">
                 <option value="">Select Group</option>
                 <option v-for="group in groups" :key="group.id" :value="group.id">{{ group.name }}</option>
               </select>

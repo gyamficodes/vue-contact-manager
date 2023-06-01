@@ -19,25 +19,25 @@
         <div class="col-md-4">
           <form @submit.prevent="submitCreate()">
             <div class="mt-3">
-              <input v-model="contacts.name" type="text" class="form-control" placeholder="name" />
+              <input required v-model="contacts.name" type="text" class="form-control" placeholder="name" />
             </div>
             <div class="mt-3">
-              <input v-model="contacts.photo" type="text" class="form-control" placeholder="Photo Url" />
+              <input required v-model="contacts.photo" type="text" class="form-control" placeholder="Photo Url" />
             </div>
             <div class="mt-3">
-              <input v-model="contacts.email" type="email" class="form-control" placeholder="Email" />
+              <input required v-model="contacts.email" type="email" class="form-control" placeholder="Email" />
             </div>
             <div class="mt-3">
-              <input v-model="contacts.mobile" type="number" class="form-control" placeholder="Mobile" />
+              <input required v-model="contacts.mobile" type="number" class="form-control" placeholder="Mobile" />
             </div>
             <div class="mt-3">
-              <input v-model="contacts.company" type="text" class="form-control" placeholder="Company" />
+              <input required v-model="contacts.company" type="text" class="form-control" placeholder="Company" />
             </div>
             <div class="mt-3">
-              <input v-model="contacts.title" type="text" class="form-control" placeholder="Title" />
+              <input required v-model="contacts.title" type="text" class="form-control" placeholder="Title" />
             </div>
             <div class="mt-3"  >
-              <select  v-model="contacts.groupId" class="form-control" v-if="groups.length > 0">
+              <select required v-model="contacts.groupId" class="form-control" v-if="groups.length > 0">
                 <option value="">Select Group</option>
                 <option :value="group.id" v-for="group in groups" :key="group.id">{{ group.name }}</option>
               </select>
