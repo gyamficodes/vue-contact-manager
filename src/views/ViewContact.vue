@@ -47,6 +47,11 @@
 <script>
 export default {
   name: 'ViewContact',
+  data() {
+    return {
+      contactId: this.$route.params.contactId,
+    };
+  },
 };
 </script>
 <style lang="css"></style>
