@@ -27,9 +27,9 @@
             <li class="list-group-item">Name: <span class="fw-bold">Name</span></li>
             <li class="list-group-item">Email: <span class="fw-bold">Email</span></li>
             <li class="list-group-item">Contact: <span class="fw-bold">Contact</span></li>
-            <li class="list-group-item">Company: <span class="fw-bold">Name</span></li>
-            <li class="list-group-item">Title: <span class="fw-bold">Email</span></li>
-            <li class="list-group-item">Group: <span class="fw-bold">Contact</span></li>
+            <li class="list-group-item">Company: <span class="fw-bold">Company</span></li>
+            <li class="list-group-item">Title: <span class="fw-bold">Titil</span></li>
+            <li class="list-group-item">Group: <span class="fw-bold">Group</span></li>
           </ul>
         </div>
       </div>
@@ -45,12 +45,25 @@
 </template>
 
 <script>
+import { ContactServices } from '@/Services/ContactServices';
+
 export default {
   name: 'ViewContact',
   data() {
     return {
-      contactId: this.$route.params.contactId,
+      contactId: this.$route.params.id,
     };
+  },
+  mounted() {
+  },
+  methods: {},
+  async created() {
+    try {
+      const response = ContactServices.getContact(this.contactId);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

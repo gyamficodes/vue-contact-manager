@@ -13,7 +13,7 @@ export class ContactServices {
     }
 
     static getContact(contactId) {
-      let dataURL = `${this.serverURL}/contacts${contactId}`;
+      let dataURL = `${this.serverURL}/contacts/${contactId}`;
       return axios.get(dataURL);
     }
 

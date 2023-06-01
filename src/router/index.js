@@ -29,7 +29,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/EditContact.vue'),
   },
   {
-    path: '/view',
+    path: '/view/:id',
     name: 'ViewContact',
     component: () => import(/* webpackChunkName: "about" */ '../views/ViewContact.vue'),
   },

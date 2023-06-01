@@ -85,7 +85,7 @@
                 </div>
                 <!-- route -->
                 <div class="col-sm-1 box-f">
-                  <router-link to="/view" class="btn btn-warning my-1"
+                  <router-link :to="`view/${contact.id}`" class="btn btn-warning my-1"
                     ><i class="fa-solid fa-eye"></i
                   ></router-link>
                   <router-link to="/edit" class="btn btn-primary my-1"
@@ -122,6 +122,7 @@ export default {
     try {
       this.Loading = true;
       const response = await ContactServices.getALLContacts();
+
       this.contacts = response.data;
       this.Loading = false;
     } catch (error) {
