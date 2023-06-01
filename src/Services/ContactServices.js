@@ -38,7 +38,7 @@ export class ContactServices {
     }
 
     static getGroup(contact) {
-      let { groupId } = contact.groupId;
+      let { groupId } = contact;
       let dataURL = `${this.serverURL}/groups/${groupId}`;
       return axios.get(dataURL);
     }

@@ -13,8 +13,25 @@
         </div>
       </div>
     </div>
-    <pre>{{ contact }}</pre>
-    <div class="container mt-3">
+        <!-- losding -->
+        <div v-if="Loading">
+      <div class="row">
+        <div class="col">
+          <SpinNer />
+        </div>
+      </div>
+    </div>
+    <!-- error message -->
+    <div v-if="Loading && errorMessage">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="h3 fw-bold text-danger">{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3" v-if="!Loading && isDone()">
       <div class="row align-items-center">
         <div class="col-md-4">
           <img
@@ -47,25 +64,36 @@
 
 <script>
 import { ContactServices } from '@/Services/ContactServices';
+import SpinNer from '@/components/SpinNer.vue';
 
 export default {
   name: 'ViewContact',
+  components: {
+    SpinNer,
+  },
   data() {
     return {
       contactId: this.$route.params.id,
       Loading: false,
       contact: {},
+      group: {},
       errorMessage: null,
     };
   },
   mounted() {},
-  methods: {},
+  methods: {
+    isDone() {
+      return Object.keys(this.contact).length > 0 && Object.keys(this.group).length > 0;
+    },
+  },
   async created() {
     try {
       this.Loading = true;
       const response = ContactServices.getContact(this.contactId);
       this.contact = (await response).data;
-      // console.log(response);
+      const groupResponse = await ContactServices.getGroup((await response).data);
+      this.group = groupResponse.data;
+      // console.log(this.contact);
       this.Loading = false;
     } catch (error) {
       this.errorMessage = error;
