@@ -36,18 +36,18 @@
         <div class="col-md-4">
           <img
             class="contact-image"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CRKPij6o2waFROp-89BCE8lEf96jLsndRQ&usqp=CAU"
+            :src="contact.photo"
             alt=""
           />
         </div>
         <div class="col-md-6">
           <ul class="list-group">
-            <li class="list-group-item">Name: <span class="fw-bold">Name</span></li>
-            <li class="list-group-item">Email: <span class="fw-bold">Email</span></li>
-            <li class="list-group-item">Contact: <span class="fw-bold">Contact</span></li>
-            <li class="list-group-item">Company: <span class="fw-bold">Company</span></li>
-            <li class="list-group-item">Title: <span class="fw-bold">Title</span></li>
-            <li class="list-group-item">Group: <span class="fw-bold">Group</span></li>
+            <li class="list-group-item">Name: <span class="fw-bold">{{ contact.name }}</span></li>
+            <li class="list-group-item">Email: <span class="fw-bold">{{ contact.email }}</span></li>
+            <li class="list-group-item">Contact: <span class="fw-bold">{{ contact.mobile }}</span></li>
+            <li class="list-group-item">Company: <span class="fw-bold">{{  contact.Company}}</span></li>
+            <li class="list-group-item">Title: <span class="fw-bold">{{ contact.title }}</span></li>
+            <li class="list-group-item">Group: <span class="fw-bold">{{ group.name }}</span></li>
           </ul>
         </div>
       </div>

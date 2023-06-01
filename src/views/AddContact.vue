@@ -22,7 +22,7 @@
               <input v-model="contacts.name" type="text" class="form-control" placeholder="name" />
             </div>
             <div class="mt-3">
-              <input v-model="contacts.phtoto" type="text" class="form-control" placeholder="Photo Url" />
+              <input v-model="contacts.photo" type="text" class="form-control" placeholder="Photo Url" />
             </div>
             <div class="mt-3">
               <input v-model="contacts.email" type="email" class="form-control" placeholder="Email" />
@@ -48,7 +48,7 @@
           </form>
         </div>
         <div class="col-md-4">
-        <img class="contact-image2" :src="contacts.phtoto" alt="">
+        <img class="contact-image2"  :src="contacts.photo" alt="">
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@ export default {
     return {
       contacts: {
         name: '',
-        phtoto: '',
+        photo: '',
         email: '',
         mobile: '',
         company: '',
