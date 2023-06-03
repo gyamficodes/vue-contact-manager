@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col">
           <h3 class="text-success">Edit Contact</h3>
-          <p class="fontstyle-italic">
+          <p class="fontstyle-italic fw-600">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda eos error cum, nihil
             repudiandae officia sit, amet voluptatibus vero deserunt soluta ut repellat ea dolorem
             eveniet animi esse ab dignissimos.
